@@ -1,0 +1,8 @@
+website description: 
+	"A computer science koi, swimming upstream to become a tech dragon."
+
+About me section: 
+	"I'm a motivated computer science student who loves taking on new challenges. With a well-rounded foundation in software development and a passion for statistics and data science, I enjoy solving problems, building things from scratch, and diving deep into concepts that really make things click."
+
+Personal quote:
+	"David didn't defeat Goliath because of his strength, but because he believed that even the smallest stone, with the will of God, could bring down the mightiest giant."

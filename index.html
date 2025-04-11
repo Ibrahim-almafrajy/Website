@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Social media optimization-->
+    <meta property="og:title" content="Ibrahim Al-Mafrajy">
+    <meta property="og:description" content="A computer science koi, swimming upstream to become a tech dragon.">
+    <meta property="og:image" content="assets/images/logo-black.jpg">
+    <!--
+    <meta property="og:url" content="https://yourwebsite.com">
+    -->
+
+    <!--Icons-->
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico" sizes="48x48">
+    <link rel="apple-touch-icon" type="image/png" href="assets/icons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="assets/icons/android-chrome-192x192.png" sizes="192x192">
+
+    <meta name="description" content="A computer science koi, swimming upstream to become a tech dragon.">
+    <link rel="stylesheet" href="styles.css">
+
+    <title>Ibrahim Al-Mafrajy</title>
+</head>
+
+<body>
+  <div class="top-bar">
+    <ul class="sidebar">
+      <li id="about-side"><a href="#about-me">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+
+  <!--About Me Section-->
+  <section id="about-me">
+    <h1>IBRAHIM <br style="line-height: normal;"> AL-MAFRAJY</h1>
+    <p id="about-me-text">
+      I'm a motivated computer science student who loves taking on new challenges. With a well-rounded foundation in software development and a passion for statistics and data science, I enjoy solving problems, building things from scratch, and diving deep into concepts that really make things <span class="glow-effect flicker-on-load" id="click-text">click</span>.
+    </p>
+
+    <!-- Centered Score Section -->
+    <div id="score-container">
+      <p id="score-text">Score:</p>
+      <p id="score">0</p>
+    </div>
+
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience">
+    <h2>My Experience</h2>
+    <span id="skillset"><h3>Skills</h3></span>
+<ul class="list skill-list">
+  <li>
+    Java
+    <div class="skill-bar"><div class="fill" data-skill="85%"></div></div>
+  </li>
+  <li>
+    HTML
+    <div class="skill-bar"><div class="fill" data-skill="80%"></div></div>
+  </li>
+  <li>
+    CSS
+    <div class="skill-bar"><div class="fill" data-skill="70%"></div></div>
+  </li>
+  <li>
+    Python
+    <div class="skill-bar"><div class="fill" data-skill="65%"></div></div>
+  </li>
+  <li>
+    C++
+    <div class="skill-bar"><div class="fill" data-skill="70%"></div></div>
+  </li>
+</ul>
+
+    <h3>Projects</h3>
+      <ul class="list">
+        <li>Different personal sites</li>
+        <li>Python scripts to automate repetitive tasks and help productivity</li>
+        <li>Mock search engine with Java</li>
+        <a href="https://github.com/Ibrahim-almafrajy" class="github-link">
+          <p class="github">All available on my github</p>
+        </a>      
+    </ul>
+    <h3>Education</h3>
+      <ul class="list">
+        <li>High school diploma from Pancyprian Lycium Larnaca (2020-2023)</li>
+        <li>Computer Science BCs from the University of Cyprus (2023-Present)</li>
+      </ul>
+    <h3>Others</h3>
+      <ul class="list">
+        <li>Fluent in Arabic</li>
+        <li>Fluent in Greek</li>
+        <li>Fluent in English</li>
+        <li>Silver medal in Kangorou English competition (x2)</li>
+        <li>Honorable mention in Cypriot mathematical olympiads (x2)</li>
+      </ul>
+  </section>
+  
+  <section id="contact">
+    <h2 style="text-align: center;">Connect with me</h2>
+    <div class="contact-grid">
+      <div class="contact-item">
+        <img src="assets\icons\email-icon.png" alt="Email Icon" />
+        <p>ibrahim_elmferjy@icloud.com</p>
+      </div>
+      <div class="contact-item">
+        <img src="assets\icons\phone-icon.svg" alt="Phone Icon" />
+        <p>+357-95-508900</p>
+      </div>
+      <div class="contact-item">
+        <a href="https://linkedin.com/in/ibrahim-al-mafraji-deva042b" target="_blank">
+          <img src="assets\icons\linkedin-icon.svg" alt="LinkedIn Icon" />
+          <p>LinkedIn</p>
+        </a>
+      </div>
+      <div class="contact-item">
+        <a href="https://github.com/Ibrahim-almafrajy" target="_blank">
+          <img src="assets\icons\github-icon.svg" alt="GitHub Icon" />
+          <p>GitHub</p>
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  
+  
+  <!-- Logo and Motivational Quote -->
+  <div id="logo-quote">
+    <p class="quote">"David didn't defeat Goliath because of his strength, but because he believed that even the smallest stone, with the will of God, could bring down the mightiest giant."</p>
+    <img src="assets\images\logo-black.jpg" alt="Logo" class="logo-img">
+  </div>
+  
+
+  <script>
+    let score = 0; // Initial score
+    const scoreElement = document.getElementById("score"); // Get the score element
+    const clickText = document.getElementById("click-text"); // Get the "click" element
+    const scoreContainer = document.getElementById("score-container"); // Get the score container
+
+    // Function to update the score
+    function increaseScore() {
+      score++;
+      scoreElement.textContent = score; // Update the score in the UI
+      scoreContainer.style.display = 'block'; // Show the score container
+    }
+
+    // Add an event listener to the "click" text to increase the score on click
+    clickText.addEventListener("click", increaseScore);
+  </script>
+
+  <script>
+    let isScrolling = false;  // Prevent multiple scroll triggers at once
+
+document.addEventListener('wheel', function(e) {
+  if (isScrolling) return;  // Prevent additional scrolling while a transition is in progress
+
+  const sections = document.querySelectorAll('section');
+  let currentSection = document.querySelector('.active');
+  if (!currentSection) {
+    currentSection = sections[0];
+    currentSection.classList.add('active');
+  }
+
+  let nextSection;
+  const scrollThreshold = 50;  // Lower threshold for scroll sensitivity
+
+  // Determine scroll direction (down or up)
+  let scrollDirection = 0;
+
+  if (e.deltaY > scrollThreshold) {
+    scrollDirection = 1;  // Scroll Down
+  } else if (e.deltaY < -scrollThreshold) {
+    scrollDirection = -1; // Scroll Up
+  }
+
+  if (scrollDirection !== 0) {
+    // Get the next or previous section based on scroll direction
+    if (scrollDirection === 1) {
+      nextSection = currentSection.nextElementSibling;
+    } else if (scrollDirection === -1) {
+      nextSection = currentSection.previousElementSibling;
+    }
+
+    // Ensure the next/previous section exists before scrolling
+    if (nextSection) {
+      isScrolling = true;  // Lock scrolling while transitioning
+
+      currentSection.classList.remove('active');
+      nextSection.classList.add('active');
+      
+      nextSection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+
+      // Unlock scrolling after transition is complete
+      setTimeout(() => {
+        isScrolling = false;
+      }, 800);  // Adjust this timeout for transition speed (800ms should be smooth)
+    }
+  }
+});
+
+
+
+  </script>
+<script>
+  const skillSection = document.querySelector('#skillset');
+  const fillBars = document.querySelectorAll('.fill');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        fillBars.forEach(bar => {
+          bar.style.width = bar.dataset.skill;
+        });
+      }
+    });
+  }, {
+    threshold: 0.5 // Adjust this if needed
+  });
+
+  observer.observe(skillSection);
+</script>
+
+</body>
+
+
+</html>

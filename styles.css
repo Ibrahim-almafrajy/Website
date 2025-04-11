@@ -1,0 +1,391 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:ital,wght@0,100..900;1,100..900&family=Unbounded:wght@200..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding/borders are included in width/height calculations */
+}
+
+body {
+    background-color: #666666;
+}
+
+
+.roboto {
+    font-family: 'Roboto', 'Arial', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:s
+      "wdth" 100;
+  }
+
+  .press-start-2p-regular {
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+
+.unbounded {
+    font-family: 'Unbounded', 'Segoe UI', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+  }
+
+/*Setting a color for all tetx*/
+h1, h2, p, h3, .list{
+    color: #ffffff;
+    padding-left: 5%;
+    padding-right: 5%;
+
+}
+
+
+
+
+/*Setting background color for sections*/
+#about-me, #contact {
+    background-color: #666666;
+}
+#experience, #logo-quote {
+    background-color: #000000;
+    box-shadow: 
+        0 -10px 20px rgba(0, 0, 0, 0.4), /* top shadow */
+        0 10px 20px rgba(0, 0, 0, 0.4);  /* bottom shadow */
+}
+
+
+/*Styling for text elements*/
+h1 {
+    font-family: 'Unbounded', 'Segoe UI', sans-serif;
+    font-weight: 900; 
+    font-size: 70px;
+    text-shadow: 
+    1px 1px 2px #000,
+        0 0 10px rgba(255, 255, 255, 0.2),
+        0 0 20px rgba(255, 255, 255, 0.1);
+}
+  
+h2 {
+    font-family: 'Roboto', 'Arial', sans-serif;
+    font-weight: 700; 
+    font-size: 50px; 
+}
+
+h3 {
+    font-family: 'Roboto', 'Arial', sans-serif;
+    font-weight: 700; 
+    font-size: 30px;
+}
+
+
+#contact h2 {
+    text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.4); /* subtle glow */
+}
+
+h3, #experience h3, #skillset {
+  text-shadow: 0.5px 0.5px 2px rgba(255, 255, 255, 0.4); /* subtle glow */
+}
+
+#experience h2 {
+    text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.4); /* subtle glow */
+}
+  
+p {
+    font-family: 'Roboto', 'Arial', sans-serif;
+    font-weight: 500; /* Regular weight */
+    font-size: 18px;
+}
+
+
+#about-me-text {
+    font-size: x-large;
+    opacity: 0;
+    transform: translateX(-30px); /* subtle left shift */
+    animation: fadeInLeft 1s ease-out forwards;
+}
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px); /* start slightly to the left */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0); /* end at its natural spot */
+    }
+}
+
+
+  
+h1 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    margin-bottom: 2rem;
+}
+
+h2 {
+    padding-top: 3rem;
+    margin-bottom: 1rem;
+}
+
+h3 {
+  padding-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* Assuming each section has a class name 'section' */
+#experience, #about-me {
+    min-height: 90vh;
+    align-items: center; /* Centers the content vertically */
+}
+
+
+.glow-effect {
+    color: #ffffff;
+    display: inline-block;
+    transition: 
+      text-shadow 0.3s ease,
+      transform 0.3s ease;
+      user-select: none; /* Prevent text selection */
+
+  }
+  
+  .glow-effect:hover {
+    text-shadow: 
+      0 0 5px #ffffff, 
+      0 0 10px #ffffff, 
+      0 0 20px #ffffff;
+    transform: scale(1.1);
+  }
+
+
+
+  /* Flicker effect on page load */
+  @keyframes flickerTwice {
+    0% { opacity: 1; text-shadow: none; }
+    10% { opacity: 0.3; text-shadow: 0 0 3px #fff; }
+    20% { opacity: 1; }
+    30% { opacity: 0.5; text-shadow: 0 0 6px #fff; }
+    40% { opacity: 1; }
+    100% { opacity: 1; }
+  }
+
+  @keyframes flickerAgain {
+    0% { opacity: 1; text-shadow: none; }
+    10% { opacity: 0.3; text-shadow: 0 0 3px #fff; }
+    20% { opacity: 1; }
+    30% { opacity: 0.5; text-shadow: 0 0 6px #fff; }
+    40% { opacity: 1; }
+    100% { opacity: 1; }
+  }
+  
+  .flicker-on-load {
+    animation: flickerTwice 1s ease-in-out 3s 1 forwards,
+    flickerAgain 1s ease-in-out 8s 1 forwards;
+  }
+
+  #score-text, #score {
+    font-size: 50px;
+    text-align: center;
+    font-family: "Press Start 2P", system-ui;
+  }
+
+  #score-text{
+    padding-top: 3%;
+  }
+
+  #score-container {
+    display: none;
+  }
+
+  
+  .top-bar {
+    position: fixed;
+    top: 0.5%;
+    right: 1%;
+    padding: 10px 20px;
+    z-index: 1000;
+    display: flex;
+    justify-content: flex-end; /* Align items to the right */
+    width: 100vw; /* Make sure the top bar takes full width */
+  }
+  
+  .sidebar {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .sidebar li {
+    margin-left: 20px; /* Adjust space between items */
+  }
+  
+  .sidebar a {
+    color: white;
+    text-decoration: none; /* Remove underline */
+    transition: all 0.3s ease; /* Smooth transition for the glow effect */
+    font-family: 'Roboto', 'Arial', sans-serif;
+    font-weight: 700; 
+    font-size: 20px;
+    text-shadow: 
+        1px 1px 3px rgba(0, 0, 0, 0.3), /* Subtle shadow */
+        0 0 8px rgba(255, 255, 255, 0.7); /* White subtle glow */
+}
+
+
+
+  
+  .sidebar a:hover {
+    color: white;
+    text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white; /* Glowing effect */
+  }
+  
+  /* Add a little margin-right to prevent the sidebar from going outside the page */
+  .top-bar {
+    padding-right: 10px; /* Add small padding to ensure no overflow */
+  }
+  
+  /* Optional: Prevent the sidebar from moving outside the screen */
+  body {
+    margin-right: 0; /* Ensure the body doesn't shift or overflow */
+  }
+
+  #about-side {
+    margin-left: 18px;
+  }
+
+  .list {
+    list-style: none;
+    font-family: 'Roboto', 'Arial', sans-serif;
+    font-weight: 500; 
+    font-size: large;
+  }
+
+  .list li{
+    margin-bottom: 0.25rem;
+  }
+
+ .list {
+  padding-bottom: 2rem;
+ }
+
+ .github-link {
+  text-decoration: none;
+  padding-top: 0.125rem;
+}
+
+.github {
+  color: white;
+  text-shadow: 0 0 1.5px #fff, 0 0 2px #fff;
+  transition: text-shadow 0.3s ease;
+  text-align: center;
+  font-size: larger;
+}
+
+.github-link:hover .github {
+  text-shadow: 0 0 6px #fff, 0 0 12px #fff, 0 0 20px #fff;
+}
+
+#experience {
+  margin-bottom: 2rem;
+}
+
+.skill-bar {
+  width: 80%;
+  height: 10px;
+  background-color: #444;
+  border-radius: 5px;
+  margin-top: 5px;
+  overflow: hidden;
+  margin-left: 10px;
+}
+
+.fill {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #00ffcc, #ffffff);
+  transition: width 2s ease-in-out;
+  border-radius: 5px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 20px;
+  padding: 2rem 5%;
+  margin-top: 2rem;
+}
+
+
+.contact-grid .contact-item:nth-child(3),
+.contact-grid .contact-item:nth-child(4) {
+  margin-top: 2rem;
+}
+
+#contact{
+  min-height: 80vh;
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.contact-item img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 0.5rem;
+}
+
+.contact-item p {
+  font-size: 18px;
+  color: white;
+  margin: 0;
+}
+
+.contact-item a {
+  color: white;
+  text-decoration: none;
+}
+
+.contact-item a:hover p {
+  text-shadow: 0 0 10px white;
+}
+
+
+#logo-quote {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 2rem;
+}
+
+#logo-quote .quote {
+  font-size: medium;
+  color: white;
+  max-width: 60%;
+  padding-left: 5%; /* only left padding */
+}
+
+
+#logo-quote .logo-img {
+  max-width: 250px;
+  height: auto;
+  padding-right: 5%;
+}
+
+
