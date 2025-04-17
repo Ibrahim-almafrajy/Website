@@ -137,24 +137,18 @@ p {
 #about-me-text {
   font-size: x-large;
   opacity: 0;
-  animation: fadeFromLeft 1s ease-out forwards;
+  animation: fadeIn 0.8s ease-out 0.9s forwards; /* delay to wait for h1 */
 }
 
-@keyframes fadeFromLeft {
+@keyframes fadeIn {
   0% {
       opacity: 0;
-      clip-path: inset(0 100% 0 0); /* fully clipped from the right */
   }
   100% {
       opacity: 1;
-      clip-path: inset(0 0 0 0); /* fully revealed */
   }
 }
 
-
-
-
-  
 h1 {
     padding-top: 3rem;
     padding-bottom: 3rem;
